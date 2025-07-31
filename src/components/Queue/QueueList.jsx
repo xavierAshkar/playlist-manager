@@ -1,13 +1,14 @@
-export default function QueueList() {
-    return (
+import SongItem from './SongItem'
+
+export default function QueueList({ songs }) {
+  return (
+    <div>
+      {/* All upcoming songs */}
       <div>
-        <h3 className="text-subheading mb-2">Up Next</h3>
-        <ul className="space-y-2">
-          <li className="text-body">Song One – Artist A</li>
-          <li className="text-body">Song Two – Artist B</li>
-          <li className="text-body">Song Three – Artist C</li>
-        </ul>
+        {songs.map(song => (
+          <SongItem key={song.id} title={song.title} artist={song.artist} />
+        ))}
       </div>
-    )
-  }
-  
+    </div>
+  )
+}

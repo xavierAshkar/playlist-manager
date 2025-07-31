@@ -1,11 +1,11 @@
 export default function SongItem({ title, artist, isCurrent = false }) {
     return (
-      <div className="flex items-center h-18 px-3 hover:bg-bg-light rounded-md group transition">
+      <div className="flex items-center h-16 px-2 hover:bg-bg-light rounded-md group transition">
         {/* LEFT: Placeholder Cover */}
         <div className="w-12 h-12 rounded-md bg-spotify mr-3"></div>
   
         {/* MIDDLE: Title + Artist */}
-        <div className="flex flex-col gap-1 flex-1 h-12">
+        <div className="flex flex-col gap-[2px] flex-1 h-12">
           <span className={`text-subheading ${isCurrent ? 'text-spotify' : 'text-text'}`}>{title}</span>
           <span className="text-body text-text-subtle">{artist}</span>
         </div>
