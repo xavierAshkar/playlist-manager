@@ -11,7 +11,7 @@
   --color-border-light: hsl(240, 7%, 40%);
   --color-text: hsl(0, 0%, 95%);
   --color-text-muted: hsl(0, 0%, 83%);
-  --color-subtle-text: hsl(0, 0%, 70%);
+  --color-text-subtle: hsl(0, 0%, 70%);
 
   /* Font */
   --font-family-sans: "Inter", sans-serif;
@@ -36,6 +36,6 @@
   .text-heading {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-heading);
-    font-weight: 600;
+    font-weight: 500;
   }
 }

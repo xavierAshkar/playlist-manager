@@ -4,7 +4,7 @@ import QueueList from './QueueList'
 
 export default function Queue() {
   return (
-    <div className="h-full w-full bg-bg-light flex flex-col p-4 gap-4">
+    <div className="h-full w-full bg-bg flex flex-col px-1 rounded-t-2xl">
       {/* Previous Songs */}
       <QueuePrevious />
 
