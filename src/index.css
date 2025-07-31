@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg-dark: hsl(240, 5%, 5%);
+  --color-bg: hsl(240, 5%, 10%);
+  --color-bg-light: hsl(240, 5%, 15%);
+  --color-spotify: hsl(142, 77%, 48%);
+  --color-border-light: hsl(240, 7%, 40%);
+  --color-text: hsl(0, 0%, 95%);
+  --color-text-muted: hsl(0, 0%, 83%);
+  --color-subtle-text: hsl(0, 0%, 70%);
+
+  /* Font */
+  --font-family-sans: "Inter", sans-serif;
+  --font-size-body: 0.875rem;
+  --font-size-heading: 1rem;
+}
+
+@layer utilities {
+  /* Body text */
+  .text-body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-body);
+    font-weight: 400;
+  }
+  /* Subheading */
+  .text-subheading {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-body);
+    font-weight: 500;
+  }
+  /* Heading */
+  .text-heading {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-heading);
+    font-weight: 600;
+  }
+}
