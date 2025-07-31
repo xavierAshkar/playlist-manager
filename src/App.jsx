@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="h-screen flex flex-col bg-bg-dark text-text">
       {/* Header */}
-      <header className="h-[72px] w-full">
+      <header className="h-[64px] w-full">
         <Header />
       </header>
 
