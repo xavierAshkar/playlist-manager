@@ -18,7 +18,7 @@ export default function App() {
         </main>
 
         {/* Queue Section */}
-        <aside className="w-[304px] mx-2">
+        <aside className="w-[304px] mx-2 mt-2">
           <Queue />
         </aside>
       </div>

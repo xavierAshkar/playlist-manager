@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
 @theme {
   /* Colors */
   --color-bg-dark: hsl(240, 5%, 5%);
@@ -11,7 +9,7 @@
   --color-border-light: hsl(240, 7%, 40%);
   --color-text: hsl(0, 0%, 95%);
   --color-text-muted: hsl(0, 0%, 83%);
-  --color-subtle-text: hsl(0, 0%, 70%);
+  --color-text-subtle: hsl(0, 0%, 70%);
 
   /* Font */
   --font-family-sans: "Inter", sans-serif;
@@ -24,18 +22,51 @@
   .text-body {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-body);
-    font-weight: 400;
+    font-weight: 300;
   }
   /* Subheading */
   .text-subheading {
     font-family: var(--font-family-sans);
-    font-size: var(--font-size-body);
-    font-weight: 500;
+    font-size: var(--font-size-heading);
+    font-weight: 300;
   }
   /* Heading */
   .text-heading {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-heading);
-    font-weight: 600;
+    font-weight: 500;
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out 1s; /* linger after hover */
+}
+
+/* On hover: show immediately, no delay */
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+  transition-delay: 0s; /* appear right away */
+}
+
+/* Brighter on direct thumb hover */
+.custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox fallback */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.custom-scrollbar:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }

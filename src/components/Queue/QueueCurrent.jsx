@@ -1,9 +1,10 @@
-export default function QueueCurrent() {
-    return (
-      <div>
-        <h3 className="text-subheading mb-2">Now Playing</h3>
-        <p className="text-heading">Current Song</p>
-      </div>
-    )
-  }
-  
+import SongItem from './SongItem'
+
+export default function QueueCurrent({ song }) {
+  return (
+    <div>
+      {/* Current Song */}
+      <SongItem title={song.title} artist={song.artist} isCurrent={true} />
+    </div>
+  )
+}
