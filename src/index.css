@@ -38,35 +38,30 @@
   }
 }
 
+/* base scrollbar (track + thumb) */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
-  background-color: transparent;
 }
-
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out 1s; /* linger after hover */
+  opacity: 0;                     /* hidden by default */
+  transition: opacity 0.3s ease;  /* fade in/out */
 }
 
-/* On hover: show immediately, no delay */
+/* show thumb when hovering _that container_ */
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-  opacity: 1;
-  transition-delay: 0s; /* appear right away */
+  opacity: 1;                     /* appear on hover */
 }
 
-/* Brighter on direct thumb hover */
-.custom-scrollbar:hover::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Firefox fallback */
+/* Firefox support */
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
-
 .custom-scrollbar:hover {
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
 }

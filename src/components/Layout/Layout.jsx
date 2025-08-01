@@ -1,18 +1,17 @@
-import HeaderLeft from './HeaderLeft'
-import HeaderCenter from './HeaderCenter'
-import HeaderRight from './HeaderRight'
-import FooterLeft from './FooterLeft'
-import FooterCenter from './FooterCenter'
-import FooterRight from './FooterRight'
+import HeaderLeft from './Header/HeaderLeft'
+import HeaderCenter from './Header/HeaderCenter'
+import HeaderRight from './Header/HeaderRight'
+import FooterLeft from './Footer/FooterLeft'
+import FooterCenter from './Footer/FooterCenter'
+import FooterRight from './Footer/FooterRight'
 
 export default function Layout({ children, Sidebar }) {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-bg-dark">
 
       {/* HEADER */}
       <header
-        className="flex items-center justify-between px-4"
-        style={{ height: '60px' }}   // 60px header
+        className="h-[64px] w-full flex items-center justify-between px-4 bg-bg-dark text-text"
       >
         <HeaderLeft />
         <HeaderCenter />
@@ -28,7 +27,7 @@ export default function Layout({ children, Sidebar }) {
 
         {/* Queue sidebar */}
         <aside
-          className="overflow-auto border-l"
+          className="overflow-auto custom-scrollbar"
           style={{ width: '320px' }}   // 320px sidebar
         >
           {Sidebar}
@@ -37,7 +36,7 @@ export default function Layout({ children, Sidebar }) {
 
       {/* FOOTER */}
       <footer
-        className="flex items-center justify-between px-4"
+        className="flex items-center justify-between px-4 bg-bg-dark text-text"
         style={{ height: '80px' }}   // 80px footer
       >
         <FooterLeft />
