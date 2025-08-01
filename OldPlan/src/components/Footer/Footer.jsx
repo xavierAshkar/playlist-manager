@@ -1,6 +1,6 @@
-import FooterLeft from './FooterLeft'
-import FooterCenter from './FooterCenter'
-import FooterRight from './FooterRight'
+import FooterLeft from '../../../../src/components/Layout/Footer/FooterLeft'
+import FooterCenter from '../../../../src/components/Layout/Footer/FooterCenter'
+import FooterRight from '../../../../src/components/Layout/Footer/FooterRight'
 
 export default function Footer() {
   return (
