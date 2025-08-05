@@ -28,27 +28,53 @@ export const mockQueue = {
     ],
   };
   
-  // ––– Mock Playlists Data –––
-  export const mockPlaylists = [
-    {
-      id: 'rock',
-      name: 'Rock Classics',
-      tracks: [
-        { id: '101', title: 'Man in the Box',    artist: 'Alice In Chains' },
-        { id: '102', title: 'Nutshell',          artist: 'Alice In Chains' },
-        { id: '103', title: 'Them Bones',        artist: 'Alice In Chains' },
-        { id: '104', title: 'Would?',            artist: 'Alice In Chains' },
-      ],
-    },
-    {
-      id: 'chill',
-      name: 'Chill Vibes',
-      tracks: [
-        { id: '201', title: 'Covet',             artist: 'Basement' },
-        { id: '202', title: 'Song A',            artist: 'Artist X' },
-        { id: '203', title: 'Song B',            artist: 'Artist Y' },
-      ],
-    },
-    // More playlists can be added here as necessary
-  ];
-  
+// src/data/mockSpotify.js
+
+// ––– Mock Playlists Data –––
+// Each playlist has an `images` array just like Spotify:
+//   [ {url, width:640,height:640}, {url,300,300}, {url,60,60} ]
+export const mockPlaylists = Array.from({ length: 10 }, (_, i) => {
+  const pid = `playlist${i+1}`
+  return {
+    id: pid,
+    name: `Playlist ${i+1}`,
+    images: [
+      { url: `/mock-images/playlists/${pid}-640.jpg`, width: 640, height: 640 },
+      { url: `/mock-images/playlists/${pid}-300.jpg`, width: 300, height: 300 },
+      { url: `/mock-images/playlists/${pid}-60.jpg`,  width:  60, height:  60 },
+    ],
+    tracks: Array.from({ length: 5 }, (_, j) => {
+      const tid = `${pid}-t${j+1}`
+      return {
+        id: tid,
+        title: `Track ${j+1}`,
+        artist: `Artist ${j+1}`,
+        // track-level album images (same 640/300/60 sizes)
+        album: {
+          images: [
+            { url: `/mock-images/albums/track${j+1}-640.jpg`, width: 640, height: 640 },
+            { url: `/mock-images/albums/track${j+1}-300.jpg`, width: 300, height: 300 },
+            { url: `/mock-images/albums/track${j+1}-60.jpg`,  width:  60, height:  60 },
+          ],
+        },
+      }
+    }),
+  }
+})
+
+// ––– Mock “Liked Songs” Data –––
+export const mockLikedSongs = [
+  {
+    id: 'l1',
+    title: 'Favorite Track 1',
+    artist: 'Hot Artist',
+    albumCoverUrl: 'https://picsum.photos/seed/like1/56/56',
+  },
+  {
+    id: 'l2',
+    title: 'Favorite Track 2',
+    artist: 'Cool Artist',
+    albumCoverUrl: 'https://picsum.photos/seed/like2/56/56',
+  },
+  // …etc
+]

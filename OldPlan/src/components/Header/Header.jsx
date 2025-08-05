@@ -1,6 +1,6 @@
-import HeaderLeft from './HeaderLeft'
-import HeaderCenter from './HeaderCenter'
-import HeaderRight from './HeaderRight'
+import HeaderLeft from '../../../../src/components/Layout/Header/HeaderLeft'
+import HeaderCenter from '../../../../src/components/Layout/Header/HeaderCenter'
+import HeaderRight from '../../../../src/components/Layout/Header/HeaderRight'
 
 export default function Header() {
   return (
