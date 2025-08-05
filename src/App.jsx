@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import QueuePage from './pages/QueuePage'
 import PlaylistsPage from './pages/PlaylistsPage'
+import PlaylistDetailPage from './pages/PlaylistDetailPage'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<Navigate to="/playlists" replace />} />
         <Route path="/queue" element={<QueuePage />} />
         <Route path="/playlists" element={<PlaylistsPage />} />
+        <Route path="/playlists/:id" element={<PlaylistDetailPage />} />
       </Routes>
     </BrowserRouter>
   )
